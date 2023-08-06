@@ -1,0 +1,78 @@
+001 Запс на прийом
+  Precondition
+    - test site is opened on the home page: https://medikom.ua/
+
+  Steps
+    1. Pres on the button "Запис на прийом"
+    2. Fill in the form with valid data
+      a. fill in the field "name" with valid data
+      b. fill in the field "phone" with valid data
+    3. Press on the button "Записатися" (submit)
+
+  Expected result
+    1. The form is opened
+
+
+002 Find a doctor
+  Precondition
+    - test site is opened on the home page: https://medikom.ua/
+
+  Steps
+    1. Press on the button "Лікарі"
+    2. Fill in the search field with valid data (for example "Авершин Валерій Іванович")
+    3. Press on the find doctor button
+
+  Expected result
+    1. The name of the doctor is equal to the name in the search field
+    2. The doctor's page is opened
+
+003 Find all doctors in the clinic by department
+    Precondition
+        - test site is opened on the home page: https://medikom.ua/
+
+    Steps
+        1. Press on the button "Лікарі"
+        2. Press on the button "Дітям"
+        3. Press on the button "вул. Василя Тютюнника, 37/1"
+        4. Press on the button "Всі лікарі" in the department "Ультразвукова діагностика - УЗД"
+
+    Expected result
+        1. The all doctors in the clinic by department are displayed
+        2. The doctor's description is displayed "Лікар УЗД" and "вул. Василя Тютюнника, 37/1"
+
+004 Left comment about doctor
+    Precondition
+        - test site is opened on the home page: https://medikom.ua/
+        - doctor's page is opened
+
+    Steps
+        1. Press on the button "Залишити відгук"
+        2. Fill in the form with valid data
+            a. fill in the field "name" with valid data
+            b. fill in the field "phone" with valid data
+            c. select star rating
+            d. fill in the field "comment" with valid data
+            e. choose the checkbox "Я не робот"
+        3. Press on the button "Відправити" (submit)
+
+    Expected result
+        1. all fields are with correct data
+        2. The comment is displayed on the page
+
+005 Find all doctors in the clinic by department
+
+    Precondition
+        - test site is opened on the home page: https://medikom.ua/
+
+    Steps
+        1. Press on the button "Дітям"
+        2. Press on the button "офтальмологія"
+        3. Press on the button "Лікарі"
+
+    Expected result
+        1. The all doctors in the clinic by department are displayed
+            - Качуровський Богдан Анатолійович
+            - Марюхніч Надія Володимирівна
+            - Якубовський Сергій Валерійович
+            - Буяновська Леся Анатоліївна
+            - Павленко Дмитро Олександрович
