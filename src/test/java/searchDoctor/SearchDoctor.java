@@ -13,4 +13,5 @@ public class SearchDoctor extends BaseTest {
         pageProvider.getDoctorsPageAll().enterDoctorName(VALID_DOCTOR_OCHI_1);
 
 
+    }
 }
