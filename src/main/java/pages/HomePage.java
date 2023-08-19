@@ -14,4 +14,9 @@ public class HomePage extends ParentPageWithHeader {
         return "/";
     }
 
+    public HomePage openHomePage() {
+        openPage(baseUrl);
+        return this;
+    }
+
 }
