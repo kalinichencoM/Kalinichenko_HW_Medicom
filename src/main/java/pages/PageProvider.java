@@ -8,5 +8,5 @@ public class PageProvider {
         this.webDriver = webDriver;
     }
     public HomePage getHomePage() { return new HomePage(webDriver); }
-    public DoctorsPageAll getDoctorsPageAll() { return new DoctorsPageAll(webDriver); }
+    public DoctorsPageAllDoctors getDoctorsPageAll() { return new DoctorsPageAllDoctors(webDriver); }
 }

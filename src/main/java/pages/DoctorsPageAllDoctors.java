@@ -5,10 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class DoctorsPageAll extends ParentPageWithHeader{
+public class DoctorsPageAllDoctors extends ParentPageWithHeader{
 
-    public DoctorsPageAll(WebDriver webDriver) {
+    public DoctorsPageAllDoctors(WebDriver webDriver) {
         super(webDriver);
+    }
+
+    @Override
+    protected String getRelativeUrl() {
+        return "/doctor/";
     }
 
     @FindBy(id = "search-price")
@@ -19,12 +24,12 @@ public class DoctorsPageAll extends ParentPageWithHeader{
 
     final String searchPriceResultLocator = ".//img[@alt='%s']";
 
-    public DoctorsPageAll enterDoctorName(String doctorName) {
+    public DoctorsPageAllDoctors enterDoctorName(String doctorName) {
         enterTextIntoInput(searchDoctor, doctorName);
         return this;
     }
 
-    public DoctorsPageAll clickOnButtonSearchDoctor(String doctorName) {
+    public DoctorsPageAllDoctors clickOnButtonSearchDoctor(String doctorName) {
         clickOnElement((WebElement) By.xpath(
                 String.format(searchPriceResultLocator, doctorName)
         ));

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.ActionsWithElements;
-import pages.DoctorsPageAll;
+import pages.DoctorsPageAllDoctors;
 
 public class Header extends ActionsWithElements {
     public Header(WebDriver webDriver) {
@@ -13,8 +13,8 @@ public class Header extends ActionsWithElements {
     @FindBy(xpath = ".//a[@href='/doctor/']")
     private WebElement doctorLink;
 
-    public DoctorsPageAll clickOnButtonSearchDoctor() {
+    public DoctorsPageAllDoctors clickOnButtonSearchDoctor() {
         clickOnElement(doctorLink);
-        return new DoctorsPageAll(webDriver);
+        return new DoctorsPageAllDoctors(webDriver);
     }
 }
