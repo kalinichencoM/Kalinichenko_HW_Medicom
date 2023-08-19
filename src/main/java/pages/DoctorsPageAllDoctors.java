@@ -22,7 +22,12 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
     @FindBy(xpath = ".//span[@class='highlight']")
     private WebElement searchPriceResult;
 
+    @FindBy(xpath =".//img[@class=' ls-is-cached lazyloaded']" )
+    private WebElement imageDoctor;
+
+
     final String searchPriceResultLocator = ".//img[@alt='%s']";
+
 
     public DoctorsPageAllDoctors enterDoctorName(String doctorName) {
         enterTextIntoInput(searchDoctor, doctorName);
@@ -30,9 +35,18 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
     }
 
     public DoctorsPageAllDoctors clickOnButtonSearchDoctor(String doctorName) {
-        clickOnElement((WebElement) By.xpath(
-                String.format(searchPriceResultLocator, doctorName)
-        ));
+        clickOnElement(searchPriceResult);
+        return this;
+    }
+
+public DoctorsPageAllDoctors  checkIsButtonSearchDoctorVisible() {
+        checkElementDisplay(searchDoctor);
+        return this;
+    }
+
+    public DoctorsPageAllDoctors checkIsRedirectToAllDoctorsPage() {
+        checkUrl();
+        checkIsButtonSearchDoctorVisible();
         return this;
     }
 }
