@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.junit.Assert;
 
 abstract public class ParentPage extends ActionsWithElements{
-    final String baseUrl = "https://medikom.ua/";
+    final String baseUrl = "https://medikom.ua";
 
     public ParentPage(WebDriver webDriver) {
         super(webDriver);
@@ -36,6 +36,10 @@ abstract public class ParentPage extends ActionsWithElements{
                         "Expected result: " + baseUrl + relativeUrl + "\n" +
                         "Actual result: " + webDriver.getCurrentUrl()
                 , webDriver.getCurrentUrl().matches(baseUrl + relativeUrl));
+    }
+
+    protected void checkUrlWithPattern() {
+        checkUrlWithPattern(getRelativeUrl());
     }
 
 }

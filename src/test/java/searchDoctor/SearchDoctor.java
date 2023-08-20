@@ -9,9 +9,19 @@ public class SearchDoctor extends BaseTest {
 
     @Test
     public void searchDoctor() {
-        pageProvider.getHomePage().getHeader().clickOnButtonSearchDoctor();
-        pageProvider.getDoctorsPageAll().enterDoctorName(VALID_DOCTOR_OCHI_1);
-
-
+        pageProvider.getHomePage()
+                .openHomePage()
+                .getHeader()
+                .clickOnButtonSearchDoctor()
+                .checkIsRedirectToAllDoctorsPage()
+        ;
+        pageProvider.getDoctorsPageAll()
+                .enterDoctorName(VALID_DOCTOR_OCHI_1)
+                .checkIsButtonSearchDoctorVisible()
+                .clickOnButtonSearchDoctor(VALID_DOCTOR_OCHI_1)
+                .clickOnImageDoctor()
+                .checkIsRedirectToSingleDoctorPage()
+                .checkDoctorName(VALID_DOCTOR_OCHI_1)
+        ;
     }
 }
