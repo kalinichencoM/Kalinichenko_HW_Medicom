@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class ZapisNaPriyom extends BaseTest {
 
-    private final String VALID_NAME = "001 Kalinichenko" + Util.getDateAndTimeFormatted();
+    private final String VALID_NAME = "001 " + Util.getDateAndTimeFormatted();
 
     @Test
     public void zapisNaPriyom() {
@@ -16,10 +16,10 @@ public class ZapisNaPriyom extends BaseTest {
                 .clickOnButtonZapisNaPriyom()
                 .checkIsRedirectToPopUpZapisNaPriyom()
                 .enterName(VALID_NAME)
-                .enterTelephone("1234567890")
+                .enterTelephone("0630474773")
                 //.clickOnSubmitButton()
                 .checkTextInNameInput(VALID_NAME)
-                .checkTextInTelephoneInput("1234567890")
+                .checkTextInTelephoneInput("+38 (063) 047 47 73") // не працює Actual   :+38 (___) ___ __ __ при включеному дебаг все ок
         ;
 
     }
