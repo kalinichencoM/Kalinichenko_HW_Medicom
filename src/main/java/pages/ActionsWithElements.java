@@ -34,6 +34,15 @@ public class ActionsWithElements {
         }
     }
 
+    public void checkTextInInput(WebElement searchDoctor, String text) {
+        try {
+            Assert.assertEquals("Text in input is not expected", text, searchDoctor.getAttribute("value"));
+            logger.info("Text in input is expected");
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
     public boolean isElementDisplayed(WebElement element) {
         try {
             boolean state = element.isDisplayed();
