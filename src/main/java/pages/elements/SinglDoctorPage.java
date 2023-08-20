@@ -1,5 +1,6 @@
 package pages.elements;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,14 +14,16 @@ public class SinglDoctorPage extends ParentPageWithHeader {
     @FindBy(xpath = ".//a[@id='open-form-doctor']")
     private WebElement buttonOpenFormRegistrationForDoctorVisiting;
 
+    @FindBy(xpath = ".//div[@class='doc-name']")
+    private WebElement doctorName;
 
 
     @Override
     protected String getRelativeUrl() {
-        return "/doctor/[a-zA-Z]*-[a-zA-Z]*-[a-zA-Z]*";
+        return "/doctor/[a-zA-Z]*-[a-zA-Z]*-[a-zA-Z]*/";
     }
 
-    public SinglDoctorPage isRedirectToSinglDoctorPage() {
+    public SinglDoctorPage checkIsRedirectToSingleDoctorPage() {
         checkUrlWithPattern();
         checkIsButtonOpenFormRegistrationForDoctorVisitingVisible();
         return this;
@@ -33,6 +36,12 @@ public class SinglDoctorPage extends ParentPageWithHeader {
 
     public SinglDoctorPage checkIsButtonOpenFormRegistrationForDoctorVisitingVisible() {
         checkElementDisplay(buttonOpenFormRegistrationForDoctorVisiting);
+        return this;
+    }
+
+    public SinglDoctorPage checkDoctorName(String doctortext) {
+        WebElement webDoctor = doctorName;
+        Assert.assertEquals("Doctor name is not expected", doctortext, webDoctor.getText());
         return this;
     }
 
