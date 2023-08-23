@@ -27,6 +27,16 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
     @FindBy(xpath =".//img[@class=' lazyloaded']" )
     private WebElement imageDoctor;
 
+    @FindBy(xpath = ".//select[@name='clinics']")
+    private WebElement selectClinic;
+
+    @FindBy(xpath = ".//select[@name='select-prof']")
+    private WebElement selectProf;
+
+    @FindBy(xpath = ".//select[@name='specialization']")
+    private WebElement selectSpecialization;
+
+
 
     final String searchPriceResultLocator = ".//img[@alt='%s']";
 
@@ -49,6 +59,21 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
     public DoctorsPageAllDoctors checkIsRedirectToAllDoctorsPage() {
         checkUrl();
         checkIsButtonSearchDoctorVisible();
+        return this;
+    }
+
+    public DoctorsPageAllDoctors selectClinic(String clinic) {
+        selectTextInDropDown(selectClinic, clinic);
+        return this;
+    }
+
+    public DoctorsPageAllDoctors selectProf(String prof) {
+        selectTextInDropDown(selectProf, prof);
+        return this;
+    }
+
+    public DoctorsPageAllDoctors selectSpecialization(String specialization) {
+        selectTextInDropDown(selectSpecialization, specialization);
         return this;
     }
 
