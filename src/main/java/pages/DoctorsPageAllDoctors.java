@@ -47,6 +47,7 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
     public DoctorsPageAllDoctors clickOnButtonSearchDoctor(String doctorName) {
         Util.waitABit(5);
         clickOnElement(searchPriceResult);
+        Util.waitABit(5);
         return this;
     }
     public DoctorsPageAllDoctors  checkIsButtonSearchDoctorVisible() {

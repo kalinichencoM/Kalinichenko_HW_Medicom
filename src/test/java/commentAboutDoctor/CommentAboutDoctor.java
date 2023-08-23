@@ -23,7 +23,7 @@ public class CommentAboutDoctor extends BaseTest {
                 .clickOnButtonSearchDoctor(VALID_DOCTOR_UZD_1)
                 .clickOnImageDoctor()
                 .checkIsRedirectToSingleDoctorPage()
-        //.checkDoctorName(VALID_DOCTOR_UZD_1)
+                .checkDoctorName(VALID_DOCTOR_UZD_1)
         ;
         pageProvider.getSingleDoctorPage()
                 .clickOnButtonComment()
