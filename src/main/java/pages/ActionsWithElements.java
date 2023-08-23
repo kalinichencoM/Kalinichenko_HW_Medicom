@@ -95,5 +95,38 @@ public class ActionsWithElements {
             return "";
         }
     }
+
+    public boolean setCheckboxState(WebElement element) {
+        try {
+            if (!element.isSelected()) {
+                element.click();
+                logger.info(getElementName(element) + "Checkbox state was changed to set");
+                return true;
+            } else {
+                logger.info(getElementName(element) + "Checkbox state was not changed it is already set");
+                return false;
+            }
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+            return false;
+        }
+    }
+
+    public boolean unsetCheckboxState(WebElement element) {
+        try {
+            if (element.isSelected()) {
+                element.click();
+                logger.info(getElementName(element) + "Checkbox state was changed to unset");
+                return true;
+            } else {
+                logger.info(getElementName(element) + "Checkbox state was not changed it is already unset");
+                return false;
+            }
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+            return false;
+        }
+    }
+
 }
 

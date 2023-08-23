@@ -11,6 +11,8 @@
 
   Expected result
     1. The form is opened
+    2. The fields name is filled with valid data
+    3. The fields phone is filled with valid data
 
 
 002 Find a doctor
@@ -57,7 +59,7 @@
 
     Expected result
         1. all fields are with correct data
-        2. The comment is displayed on the page
+        2. The comment is displayed on the doctor page
 
 005 Find all doctors in the clinic by department
 
