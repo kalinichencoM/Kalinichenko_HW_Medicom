@@ -35,6 +35,15 @@ public class ActionsWithElements {
         }
     }
 
+    public void enterTextIntoInputWihoutClean(WebElement searchDoctor, String text) {
+        try {
+            searchDoctor.sendKeys(text);
+            logger.info(text + " was inputted into input " + getElementName(searchDoctor));
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
     public void checkTextInInput(WebElement searchDoctor, String text) {
         try {
             Assert.assertEquals("Text in input is not expected", text, searchDoctor.getAttribute("value"));

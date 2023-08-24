@@ -46,7 +46,7 @@ public class PopUpZapisNaPriyomPage extends ParentPage{
 
     public PopUpZapisNaPriyomPage enterTelephone(String number) {
         clickOnElement(inputTelephone);
-        enterTextIntoInput(inputTelephone, number);
+        enterTextIntoInputWihoutClean(inputTelephone, number);
 
         return this;
     }
