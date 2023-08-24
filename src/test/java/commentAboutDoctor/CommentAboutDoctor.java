@@ -1,8 +1,13 @@
 package commentAboutDoctor;
 
 import baseTest.BaseTest;
+import libs.ExcelDriver;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.util.Map;
+
+import static libs.ConfigProvider.configProperties;
 import static testData.TestData.*;
 
 
@@ -12,7 +17,11 @@ public class CommentAboutDoctor extends BaseTest {
     private final String VALID_TELEPHONE = "0630474773";
 
     @Test
-    public void commentAboutDoctor() {
+    public void invalidCommentAboutDoctor() throws IOException {
+        Map<String, String> dataToSelect = ExcelDriver.getData(configProperties.DATA_FILE(), "ErrorComment");
+        String telephon = dataToSelect.get("error_telephon");
+        String name = dataToSelect.get("error_name");
+        String star = dataToSelect.get("error_star");
         pageProvider.getHomePage()
                 .openHomePage()
                 .getHeader()
@@ -29,17 +38,11 @@ public class CommentAboutDoctor extends BaseTest {
                 .clickOnButtonComment()
                 .checkIsRedirectToCommentPage()
                 .enterComment(comment)
-                .enterNameSername(VALID_NAME)
-                .enterTelephone(VALID_TELEPHONE)
                 .checkStatusCheckBoxCommentPage("check")
-                //.clickOnButtonSubmit()
-//                .checkIsRedirectToSingleDoctorPage()
-//        ;
-//        pageProvider.getCommentPage()
-                .checkComment(comment)
-//                .checkNameSername(VALID_NAME)
-//                .checkTelephone(VALID_TELEPHONE)
-                .checkStatusCheckBoxCommentPage("check")
+                .clickOnButtonSubmit()
+                .checkErrorMessageTeelphone(telephon)
+                .checkErrorMessageName(name)
+                .checkErrorMessageStar(star)
         ;
     }
 }

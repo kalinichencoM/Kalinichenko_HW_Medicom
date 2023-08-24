@@ -1,7 +1,6 @@
 package searchDoctor;
 
 import baseTest.BaseTest;
-import libs.ConfigProvider;
 import libs.ExcelDriver;
 import org.junit.Test;
 

@@ -25,6 +25,18 @@ public class CommentPage extends SinglDoctorPage{
     @FindBy(xpath = ".//span[@class='checkbox__text']")
     private WebElement checkbox;
 
+    @FindBy(xpath = ".//button[@class='btn btn-default mini']")
+    private WebElement buttonSubmit;
+
+    @FindBy(xpath = ".//div[@class='input-wrap error-in']//*[text()='Введіть номер телефону, потрібний для звірки з картою пацієнта']")
+    private WebElement errorTelephoneField;
+
+    @FindBy(xpath = ".//div[@class='input-wrap error-in']//*[text()='Заповніть це поле']")
+    private WebElement errorNameField;
+
+    @FindBy(xpath = ".//div[@class='input-wrap error-in']//*[text()='Поставте оцінку, будь ласка']")
+    private WebElement errorRatingField;
+
     public CommentPage checkIsRedirectToCommentPage() {
         checkUrlWithPattern("/doctor/[a-zA-Z]*-[a-zA-Z]*-[a-zA-Z]*/");
         checkIsRatingSelectVisible();
@@ -82,6 +94,26 @@ public class CommentPage extends SinglDoctorPage{
             logger.error("Can not work with checkbox");
             Assert.fail("Can not work with checkbox");
         }
+        return this;
+    }
+
+    public CommentPage clickOnButtonSubmit() {
+        clickOnElement(buttonSubmit);
+        return this;
+    }
+
+    public CommentPage checkErrorMessageTeelphone(String errorTelephon) {
+        Assert.assertEquals("Telephone error message is not expected", errorTelephon, errorTelephoneField.getText());
+        return this;
+    }
+
+    public CommentPage checkErrorMessageName(String errorName) {
+        Assert.assertEquals("Name error message is not expected", errorName, errorNameField.getText());
+        return this;
+    }
+
+    public CommentPage checkErrorMessageStar(String errorStar) {
+        Assert.assertEquals("Star error message is not expected", errorStar, errorRatingField.getText());
         return this;
     }
 }

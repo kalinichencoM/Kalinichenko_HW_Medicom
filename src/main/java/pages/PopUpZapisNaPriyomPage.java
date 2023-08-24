@@ -1,5 +1,6 @@
 package pages;
 
+import libs.Util;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,7 +45,9 @@ public class PopUpZapisNaPriyomPage extends ParentPage{
     }
 
     public PopUpZapisNaPriyomPage enterTelephone(String number) {
+        clickOnElement(inputTelephone);
         enterTextIntoInput(inputTelephone, number);
+
         return this;
     }
 

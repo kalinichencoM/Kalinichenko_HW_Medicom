@@ -3,6 +3,8 @@ package searchDoctor;
 import baseTest.BaseTest;
 import org.junit.Test;
 
+import static testData.TestData.*;
+
 public class FindAllDoctorByDepartmant extends BaseTest {
 
     @Test
@@ -12,6 +14,9 @@ pageProvider.getHomePage()
         .getHeader()
         .getChildrenPage()
         .checkIsRedirectToChildrenPage()
-        .clickOphthalmologist();
+        .clickOphthalmologist()
+        .checkIsRedirectToDetskayaOphthalmologiyaPage()
+        .checkAllDoctorByDepartmant(LIST_VALID_DOCTOR_OCHI)
+        ;
     }
 }
