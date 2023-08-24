@@ -21,7 +21,7 @@ public class CommentAboutDoctor extends BaseTest {
                 .enterDoctorName(VALID_DOCTOR_UZD_1)
                 .checkIsButtonSearchDoctorVisible()
                 .clickOnButtonSearchDoctor(VALID_DOCTOR_UZD_1)
-                .clickOnImageDoctor()
+                .clickOnImageDoctor(VALID_DOCTOR_UZD_1)
                 .checkIsRedirectToSingleDoctorPage()
                 .checkDoctorName(VALID_DOCTOR_UZD_1)
         ;
@@ -33,10 +33,10 @@ public class CommentAboutDoctor extends BaseTest {
                 .enterTelephone(VALID_TELEPHONE)
                 .checkStatusCheckBoxCommentPage("check")
                 //.clickOnButtonSubmit()
-                .checkIsRedirectToSingleDoctorPage()
-        ;
-        pageProvider.getCommentPage()
-//                .checkComment(comment)
+//                .checkIsRedirectToSingleDoctorPage()
+//        ;
+//        pageProvider.getCommentPage()
+                .checkComment(comment)
 //                .checkNameSername(VALID_NAME)
 //                .checkTelephone(VALID_TELEPHONE)
                 .checkStatusCheckBoxCommentPage("check")

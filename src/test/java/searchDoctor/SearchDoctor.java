@@ -16,12 +16,12 @@ public class SearchDoctor extends BaseTest {
                 .checkIsRedirectToAllDoctorsPage()
         ;
         pageProvider.getDoctorsPageAll()
-                .enterDoctorName(VALID_DOCTOR_OCHI_1)
+                .enterDoctorName(VALID_DOCTOR_OCHI_2)
                 .checkIsButtonSearchDoctorVisible()
-                .clickOnButtonSearchDoctor(VALID_DOCTOR_OCHI_1)
-                .clickOnImageDoctor()
+                .clickOnButtonSearchDoctor(VALID_DOCTOR_OCHI_2)
+                .clickOnImageDoctor(VALID_DOCTOR_OCHI_2)
                 .checkIsRedirectToSingleDoctorPage()
-                .checkDoctorName(VALID_DOCTOR_OCHI_1)
+                .checkDoctorName(VALID_DOCTOR_OCHI_2)
         ;
     }
 }

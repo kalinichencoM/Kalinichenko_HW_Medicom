@@ -51,10 +51,6 @@ public class CommentPage extends SinglDoctorPage{
         return this;
     }
 
-    public CommentPage chouseCheckBoxImNotRobot() {
-        setCheckboxState(checkbox);
-        return this;
-    }
 
     public CommentPage checkComment(String comment) {
         Assert.assertEquals("Comment is not expected", comment, commentField.getText());
