@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.elements.SinglDoctorPage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class DoctorsPageAllDoctors extends ParentPageWithHeader{
+public class DoctorsPageAllDoctors extends ParentPageWithHeader {
 
     public DoctorsPageAllDoctors(WebDriver webDriver) {
         super(webDriver);
@@ -24,8 +24,9 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
     @FindBy(xpath = ".//span[@class='highlight']")
     private WebElement searchPriceResult;
 
-    @FindBy(xpath =".//img[@class=' lazyloaded']" )
+    @FindBy(xpath = ".//img[@class=' lazyloaded']")
     private WebElement imageDoctor;
+
 
     @FindBy(xpath = ".//select[@name='clinics']")
     private WebElement selectClinic;
@@ -37,7 +38,7 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
     private WebElement selectSpecialization;
 
 
-
+    final String searchDoctorResultLocator = ".//div[@class=\"doctors-result-cards flex-cont justify-sb\"]//span[contains(text(),'%s')]/../../../a/img";
     final String searchPriceResultLocator = ".//img[@alt='%s']";
 
 
@@ -51,7 +52,8 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
         clickOnElement(searchPriceResult);
         return this;
     }
-    public DoctorsPageAllDoctors  checkIsButtonSearchDoctorVisible() {
+
+    public DoctorsPageAllDoctors checkIsButtonSearchDoctorVisible() {
         checkElementDisplay(searchDoctor);
         return this;
     }
@@ -77,8 +79,9 @@ public class DoctorsPageAllDoctors extends ParentPageWithHeader{
         return this;
     }
 
-    public SinglDoctorPage clickOnImageDoctor() {
-        clickOnElement(imageDoctor);
+    public SinglDoctorPage clickOnImageDoctor(String doctorName) {
+        String[] doctorNameLocator = doctorName.split(" ");
+        clickOnElement(webDriver.findElement(By.xpath(String.format(searchDoctorResultLocator, doctorNameLocator[0]))));
         return new SinglDoctorPage(webDriver);
     }
 }

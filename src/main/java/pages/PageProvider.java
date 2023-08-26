@@ -9,4 +9,6 @@ public class PageProvider {
     }
     public HomePage getHomePage() { return new HomePage(webDriver); }
     public DoctorsPageAllDoctors getDoctorsPageAll() { return new DoctorsPageAllDoctors(webDriver); }
+    public SinglDoctorPage getSingleDoctorPage() { return new SinglDoctorPage(webDriver); }
+    public CommentPage getCommentPage() { return new CommentPage(webDriver); }
 }

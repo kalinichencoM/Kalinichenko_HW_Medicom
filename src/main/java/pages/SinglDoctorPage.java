@@ -1,10 +1,9 @@
-package pages.elements;
+package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.ParentPageWithHeader;
 
 public class SinglDoctorPage extends ParentPageWithHeader {
     public SinglDoctorPage(WebDriver webDriver) {
@@ -16,6 +15,9 @@ public class SinglDoctorPage extends ParentPageWithHeader {
 
     @FindBy(xpath = ".//div[@class='doc-name']")
     private WebElement doctorName;
+
+    @FindBy(xpath = ".//img[@class='gray-ar']")
+    private WebElement buttonComment;
 
 
     @Override
@@ -45,4 +47,8 @@ public class SinglDoctorPage extends ParentPageWithHeader {
         return this;
     }
 
+    public CommentPage clickOnButtonComment() {
+        clickOnElement(buttonComment);
+        return new CommentPage(webDriver);
+    }
 }
