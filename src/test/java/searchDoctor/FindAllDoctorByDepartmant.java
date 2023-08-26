@@ -16,7 +16,7 @@ pageProvider.getHomePage()
         .checkIsRedirectToChildrenPage()
         .clickOphthalmologist()
         .checkIsRedirectToDetskayaOphthalmologiyaPage()
-        .checkAllDoctorByDepartmant(LIST_VALID_DOCTOR_OCHI)
+        .checkAllDoctorName(LIST_VALID_DOCTOR_OCHI)
         ;
     }
 }
