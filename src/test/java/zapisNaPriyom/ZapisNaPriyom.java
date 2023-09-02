@@ -1,7 +1,7 @@
 package zapisNaPriyom;
 
 import baseTest.BaseTest;
-import libs.Util;
+import testData.libs.Util;
 import org.junit.Test;
 
 

@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import testData.libs.Util;
 
 import java.time.Duration;
 
@@ -53,10 +54,11 @@ public class ActionsWithElements {
         }
     }
 
-    public void selectTextInDropDown(WebElement dropDown, String text) {
+    public void selectTextInDropDownByUI(WebElement dropDown, String text, String element) {
         try {
-            Select select = new Select(dropDown);
-            select.selectByValue(text);
+            clickOnElement(dropDown);
+            Util.waitABit(1);
+            clickOnElement(webDriver.findElement(org.openqa.selenium.By.xpath(String.format(element, text))));
             logger.info(text + " was selected in DropDown");
         } catch (Exception e) {
             printErrorAndStopTest(e);

@@ -1,7 +1,7 @@
 package baseTest;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import libs.ConfigProvider;
+import testData.libs.ConfigProvider;
 import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
