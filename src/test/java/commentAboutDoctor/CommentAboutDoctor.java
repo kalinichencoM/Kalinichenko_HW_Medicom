@@ -1,14 +1,14 @@
 package commentAboutDoctor;
 
 import baseTest.BaseTest;
-import testData.libs.ExcelDriver;
+import libs.ExcelDriver;
 import org.junit.Test;
-import testData.libs.Util;
+import libs.Util;
 
 import java.io.IOException;
 import java.util.Map;
 
-import static testData.libs.ConfigProvider.configProperties;
+import static libs.ConfigProvider.configProperties;
 import static testData.TestData.*;
 
 

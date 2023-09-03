@@ -1,4 +1,4 @@
-package testData.libs;
+package libs;
 
 import org.aeonbits.owner.Config;
 

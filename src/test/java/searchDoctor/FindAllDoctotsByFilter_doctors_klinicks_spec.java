@@ -1,13 +1,14 @@
 package searchDoctor;
 
 import baseTest.BaseTest;
-import testData.libs.ExcelDriver;
+import libs.ExcelDriver;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.Map;
 
-import static testData.libs.ConfigProvider.configProperties;
+import static libs.ConfigProvider.configProperties;
+import static testData.TestData.*;
 
 public class FindAllDoctotsByFilter_doctors_klinicks_spec extends BaseTest {
 
@@ -25,6 +26,7 @@ public class FindAllDoctotsByFilter_doctors_klinicks_spec extends BaseTest {
                 .selectSpecialization(specialization)
                 .selectProf(doctor)
                 .selectClinic(clinic)
+                .checkAllDoctorName(LIST_VALID_DOCTOR_UZI)
         ;
     }
 }

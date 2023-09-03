@@ -21,7 +21,7 @@ public class DetskayaOphthalmologiyaPage extends ParentPageWithHeader {
     @FindBy(xpath = ".//*[contains(text(),'10. Консультація дитячого офтальмолога')]")
     private WebElement punkt10;
 
-    private final String DoctorNameLocator = ".//*[text()='%s']";
+    private final String doctorNameLocator = ".//*[text()='%s']";
 
     private final List<WebElement> doctors = webDriver.findElements(By.xpath(".//div[@class='swiper-wrapper direction-spec-noslider']/div[@class='swiper-slide direction-spec-card ']"));
 
@@ -31,13 +31,13 @@ public class DetskayaOphthalmologiyaPage extends ParentPageWithHeader {
         return this;
     }
 
-    public DetskayaOphthalmologiyaPage checkAllDoctorName(List<String> listValidDoctorOchi) {
-        Assert.assertEquals("Number of doctors is not correct", listValidDoctorOchi.size(), doctors.size());
-        for (int i = 0; i < listValidDoctorOchi.size(); i++) {
-            String doctorName = String.format(DoctorNameLocator, listValidDoctorOchi.get(i));
+    public DetskayaOphthalmologiyaPage checkAllDoctorName(List<String> ListValidDoctorOchi) {
+        Assert.assertEquals("Number of doctors is not correct", ListValidDoctorOchi.size(), doctors.size());
+        for (int i = 0; i < ListValidDoctorOchi.size(); i++) {
+            String doctorName = String.format(doctorNameLocator, ListValidDoctorOchi.get(i));
             WebElement ElenentName = webDriver.findElement(By.xpath(doctorName));
             logger.info("Doctor name " + ElenentName.getText() + " is found");
-            Assert.assertEquals("Doctor name is not correct", listValidDoctorOchi.get(i), ElenentName.getText());
+            Assert.assertEquals("Doctor name is not correct", ListValidDoctorOchi.get(i), ElenentName.getText());
         }
         return this;
     }
