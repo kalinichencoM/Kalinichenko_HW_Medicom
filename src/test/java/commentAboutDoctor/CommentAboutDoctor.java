@@ -3,6 +3,7 @@ package commentAboutDoctor;
 import baseTest.BaseTest;
 import libs.ExcelDriver;
 import org.junit.Test;
+import libs.Util;
 
 import java.io.IOException;
 import java.util.Map;
@@ -12,7 +13,7 @@ import static testData.TestData.*;
 
 
 public class CommentAboutDoctor extends BaseTest {
-    private final String comment = "004 Kalinichenko " + libs.Util.getDateAndTimeFormatted();
+    private final String comment = "004 Kalinichenko " + Util.getDateAndTimeFormatted();
     private final String VALID_NAME = "Kalinichenko";
     private final String VALID_TELEPHONE = "0630474773";
 
